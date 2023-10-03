@@ -20,6 +20,9 @@ See https://github.com/bjorn3/browser_wasi_shim/pull/28 for instructions on how 
 <body>
 <div id="terminal"></div>
 <div id="downloads"></div>
+<p id="note">
+  Note: the panic at the end is expected. This demo highlights how far `rustc` can get on this polyfill before failing due to other reasons.
+</p>
 <script type="module">
     import { Fd } from "../dist/fd.js";
     import { File, Directory } from "../dist/fs_core.js";
