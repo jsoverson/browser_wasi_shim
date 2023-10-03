@@ -24,7 +24,9 @@ export default class WASI {
     exports: { memory: WebAssembly.Memory; _initialize: () => unknown };
   }) {
     this.inst = instance;
-    instance.exports._initialize();
+    if (instance.exports._initialize !== undefined) {
+      instance.exports._initialize();
+    }
   }
 
   constructor(args: Array<string>, env: Array<string>, fds: Array<Fd>) {
